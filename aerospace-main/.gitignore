@@ -1,0 +1,57 @@
+*.AppImage
+NASA_FILES
+*.ork
+*.eps
+*.asv
+spice/kernels/
+spice/cspice
+spice/mice
+*.pdf
+spice/SELF_TRAINING
+*.jar
+*.gif
+*.java
+*.wav
+*.xlsx
+*.slx
+*.mp4
+*.kdenlive
+*.mat
+*.pyc
+__pycache__
+*.png
+*.jpg
+*.jpeg
+*.OUT
+
+# Prerequisites
+*.d
+
+# Compiled Object files
+*.slo
+*.lo
+*.o
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Fortran module files
+*.mod
+*.smod
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lib
+
+# Executables
+*.exe
+*.out
+*.app
