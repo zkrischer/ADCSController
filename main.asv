@@ -4,7 +4,7 @@ clc
 close all
 
 % Parameter Intialisation
-addpath 'aerospace-main/igrf/'
+addpath '../igrf/'
 nextMagUpdate = 1;
 lastMagUpdate = 0;
 
@@ -30,7 +30,4 @@ wz = 0;
 
 u0 = [quat0;wx;wy;wz];
 
-%% Simulation Setup
-tfinal = 400;
-timeStep = 1.0;
-tout = 0:timeste:tfinal;
+
