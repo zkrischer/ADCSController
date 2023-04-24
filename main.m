@@ -17,7 +17,7 @@ Iy = 0.01026573;
 Iz = 0.00334000;
 
 I = [Ix,0,0;0,Iy,0;0,0,Iz];
-
+J = [Ix,Iy,Iz]';
 %% Initial Conditions for Attitude and Angular Velocity
 phi0 = 0;
 theta0 = 0;
@@ -28,9 +28,11 @@ wx = 0;
 wy = 0;
 wz = 0;
 
-u0 = [quat0;wx;wy;wz];
+x0 = [quat0;wx;wy;wz];
 
 %% Simulation Setup
 tfinal = 400;
 timeStep = 1.0;
 tout = 0:timeste:tfinal;
+
+

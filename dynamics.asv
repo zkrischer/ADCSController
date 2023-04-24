@@ -1,0 +1,20 @@
+function dynX = dynamics(x,timestep)
+%DYNAMICS Summary of this function goes here
+%   Detailed explanation goes here
+    
+    q0 = x(1);
+    q1 = x(2);
+    q2 = x(3);
+    q3 = x(4);
+    wx = x(5);
+    wy = x(6);
+    wz = x(7);
+
+    dynX = [q0 - timestep/2 * (q1*wx + q2*wy + qz*wz);
+            q1 + timestep/2 * (q0*wx - q3*wy + q2*wz);
+            q2 + timestep/2 * (q3*wx + q0*wy - q1*wz);
+            q3 + timestep/2 * (-q2*wx + q1*wy +q0*wz);
+            
+            ];
+end
+
