@@ -1,21 +1,24 @@
-function dynX = dynamics(x,deltaT, J)
+function [xdot] = dynamics(x,dt)
 %DYNAMICS Summary of this function goes here
 %   Detailed explanation goes here
-    
+
+    J = [0.01026573;0.01026573;0.00334000];
     q0 = x(1);
-    q1 = x(2);
-    q2 = x(3);
-    q3 = x(4);
+    qx = x(2);
+    qy = x(3);
+    qz = x(4);
     wx = x(5);
     wy = x(6);
     wz = x(7);
 
-    dynX = [q0 - deltaT/2 * (q1*wx + q2*wy + q3*wz);
-            q1 + deltaT/2 * (q0*wx - q3*wy + q2*wz);
-            q2 + deltaT/2 * (q3*wx + q0*wy - q1*wz);
-            q3 + deltaT/2 * (-q2*wx + q1*wy +q0*wz);
-            wx + deltaT * ((J(2)-J(3))/J(1) * wy*wz);
-            wy + deltaT * ((J(3)-J(1))/J(2) * wz*wx);
-            wz + deltaT * ((J(1)-J(2))/J(3) * wx*wy)];
+    xdot = [q0 - dt/2 * (qx*wx + qy*wy + qz*wz);
+            qx + dt/2 * (q0*wx - qz*wy + qy*wz);
+            qy + dt/2 * (qz*wx + q0*wy - qx*wz);
+            qz + dt/2 * (-qy*wx + qx*wy +q0*wz);
+            wx + dt*((J(2)-J(3))/J(1) * wy*wz);
+            wy + dt*((J(3)-J(1))/J(2) * wz*wx);
+            wz + dt*((J(1)-J(2))/J(3) * wx*wy)];
+
+    
 end
 
