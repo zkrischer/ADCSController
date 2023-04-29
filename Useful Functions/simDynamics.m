@@ -1,4 +1,4 @@
-function xdot = odefunc(x,u)
+function xdot = simDynamics(x,u)
 %ODEFUNC Summary of this function goes here
 %   Detailed explanation goes here
     
